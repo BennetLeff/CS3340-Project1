@@ -1,6 +1,5 @@
 .data
 	prompt:    .asciiz "Enter an integer between 2 and 18: "
-	newline:   .asciiz "\n"
 
 .text
 main:
