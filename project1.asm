@@ -16,7 +16,7 @@ main:
 	# Store the input in $t0
 	move $t0, $v0		 # this equals m in the fib program
 	
-	###### FIB Program #######
+	###### Pseudocode ######
 	# a = 1
 	# b = 2
 	# c = 0
@@ -35,6 +35,7 @@ main:
 	# 	count = count + 1
 	# return count
 	
+	###### MIPS matching pseudocode ######
 	addi $t1, $zero, 1	# a = 1
 	addi $t2, $zero, 2	# b = 2
 	addi $t3, $zero, 0  	# c = 0
@@ -56,13 +57,8 @@ loop:
    	add  $t2, $zero, $t3	# b = c
    	addi $t4, $t4, 1 	# count = count + 1
    	
-   	# li   $v0, 1			# print the number
-   	# move $a0, $t3
-   	# syscall
-   	
-   	j    loop
-	
-	###############################
+   	j    loop		# we can loop back since there's no need to branch
+
 end: 		
 	# Print a from fib loop to console
 	li   $v0, 1
